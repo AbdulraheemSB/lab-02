@@ -1,9 +1,9 @@
 package sa.edu.kau.fcit.cpit252;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import sa.edu.kau.fcit.cpit252.logging.Logger;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
 public class LoggerTest {
 
