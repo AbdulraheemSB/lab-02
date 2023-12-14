@@ -14,8 +14,8 @@ jobs:
           command: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       # Then run your tests and collect coverage!
       - run:
-          name: Run tests and collect coverage
-          command: mvn -B test
+          name: Run tests with coverage
+          command: mvn test jacoco:report
 
       - coveralls/upload
 
