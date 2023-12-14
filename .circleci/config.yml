@@ -7,10 +7,16 @@ jobs:
     docker:
       - image: cimg/openjdk:18.0
     steps:
+      # Checkout the code as the first step.
       - checkout
       - run:
-          name: Install and Make
-          command: npm install && make test-coverage
+          name: Install dependencies
+          command: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+      # Then run your tests and collect coverage!
+      - run:
+          name: Run tests and collect coverage
+          command: mvn -B test
+
       - coveralls/upload
 
 workflows:
